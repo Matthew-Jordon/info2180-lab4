@@ -69,6 +69,7 @@ header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorizatio
 ?>
 <?php
 $lookup = $_REQUEST["q"];
+filter_var($lookup,FILTER_FLAG_NO_ENCODE_QUOTES,FILTER_SANITIZE_STRING);
 if ($lookup != "") {
     $count = 0;
     foreach ($superheroes as $superhero) {
