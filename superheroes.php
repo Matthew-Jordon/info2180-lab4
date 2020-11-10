@@ -68,8 +68,8 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE');
 header('Access-Control-Allow-Headers: Origin, Content-Type, Accept, Authorization, X-Request-With');
 ?>
 <?php
-$lookup = $_REQUEST["q"];
-filter_var($lookup,FILTER_FLAG_NO_ENCODE_QUOTES,FILTER_SANITIZE_STRING);
+$input = $_REQUEST["q"];
+$lookup = filter_var($input, FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
 if ($lookup != "") {
     $count = 0;
     foreach ($superheroes as $superhero) {
