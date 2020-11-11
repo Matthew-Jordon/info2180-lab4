@@ -82,8 +82,10 @@ if ($lookup != "") {
         $count++;
     }
 } else {
-    foreach ($superheroes as $superhero) {
-        echo "<ul><li>".$superhero['alias']."</li></ul>";
+    echo "<ul>";
+    foreach ($superheroes as $superhero){
+        echo "<li>".$superhero['alias']."</li>";
     }
+    echo "</ul>";
 }
 ?>
